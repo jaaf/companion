@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+  </head>
+  <body style="width: 1100px; margin: auto;">
+    <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    Remarque générale sur les saisies et les sauvegardes en base de données
+General consideration about inputs and saving into the database
+
+Lorsqu'une saisie concerne une grandeur quantifiable dans plusieurs unités. Le champ de saisie est accompagné d'un sélecteur d'unité. La valeur en cours de saisie concerne toujours l'unité affichée. Si par la suite, l'unité est changée, la valeur est automatiquement convertie. Cela facilite la saisie d'un ingrédient exprimé en unité US pour un utilisateur préférant le système métrique, et réciproquement.
+
+Pour faciliter la gestion en base de données, la valeur sauvegardée est toujous reconvertie dans une unité intangible et cela quelque soit la valeur de l'unité affichée.
+Relation ingrédient recette brassin
+Remarque sur les ingrédients
+
+Seuls les malts existants dans l'inventaire ont une réalité garantie, c'est à dire qu'ils sont disponibles sur le marché à l'instant de leur achat.
+
+Les ingrédients enregistrés en base publique ne sont là que pour faciliter la saisie. Ils ne peuvent avoir de réalité garantie, le produit pouvant avoir évolué ou simplement disparu lorsqu'un utilisateur décide de l'acheter.
+
+C'est pourquoi les recettes et les brassins, une fois enregistrés, ne font plus référence à des ingrédients en base de données. Ils conservent les valeurs du moment par eux-mêmes.
+
+Une recette enregistre simplement les quantités et les caractéristiques des ingrédients au moment où elle est créée. Une recette n'est pas directement utilisable pour un brassin car il se peut qu'elle soit très ancienne et que les caractéristiques des ingrédients aient changé ou que ces ingrédients n'existent plus au moment du brassage. En ce sens, elle ne se réfère pas directement à la base de données publique pas plus qu'à l'inventaire de l'utilisateur.
+Ajouts dans l'inventaire
+
+Lorsqu'un utilisateur veut entrer un ingrédient dans son inventaire, il commence par le rechercher dans la base publique.
+
+Dans le dialogue de transfert vers son inventaire, deux possibiltés se présentent:
+
+    soit l'ingrédient a été correctement saisie en base publique
+    soit ce n'est pas le cas.
+
+-
+
+Dans le deuxième cas, l'utilisateur peut modifier la base publique en mettant l'ingrédient à jour, soit simplement éditer l'ingrédient dans son inventaire pour le rendre conforme à la réalité de son achat. Dans tous les cas, le produit dans son inventaire ne peut être modifié que par lui.
+Un brassin est la mise en œuvre d'une recette. Un brassin doit faire référence à des ingrédients réels à l'instant du brassage. Ces ingrédients doivent se trouver dans l'inventaire de l'utilisateur au moment du brassage. Au moment d'utiliser une recette, seuls les dénominations et les caractéristiques mémorisées sont présentées à l'utilisateur. Pour chacun des ingrédients présents, il doit établir une correspondance avec un produit en inventaire, ce qui peut légèrement modifier les caractéristiques donc les résultats de la recette. La recette peut alors être modifiée à partir des données du brassin. Pour chaque ingrédient, il existe une table commune à tous les utilisateurs pour contenir les ingrédients qu'ils ont en inventaire. Par exemple, une table inventory_fermentables pour les fermentables. En plus des donnés du fermentable telles qu'on les trouve dans la base partagée des fermentables, on ajoute le user_id, la quantité en stock et le prix unitaire. Chaque achat de l'utilisateur crée un enregistrement dans cette table, même s'il s'agit du même produit.
+Création, importation et exportation des ingrédients
+Pour ajouter un ingrédient à son inventaire l'utilisateur à le choix entre le créer directement ou en importer une copie de la base de données partagée. Dans le dialogue de création, il a deux possibilités de sauvegarde : soit dans son inventaire seulement, soit dans la base de données partagée, soit dans les deux à la fois. Lorsqu'il décide de le sauvegarder dans la base de données partagée, il est mis en garde de respecter des consignes strictes et inviter à s'abstenir s'il ne comprend pas ce qu'il doit faire. S'il décide de l'importer de la base de données partagée, il doit remplir des champs supplémentaires (quantité et prix). Il peut aussi décider de remettre à jour l'ingrédient en base de données partagée s'il constate une divergence d'avec la spécification du fabricant. Il doit pour cela cocher une case avant de sauvegarder. Il faut bien comprendre que cela ne risque pas de perturber les autres utilisateurs quant à ce qu'ils ont déjà en inventaire et en recettes et brassin. 
+
+When a seizure concerns a quantifiable size in several units. The input field is accompanied by a unit selector. The input value always concerns the displayed unit. If thereafter, the unit is changed, the value is automatically converted. This facilitates the entry of an ingredient expressed in US unit for a user preferring the metric system, and reciprocally.
+
+To facilitate database management, the saved value is always converted into an intangible unit, and this whatever the value of the displayed unit.
+Relationship Ingredient Recipe Brassin
+Note on the ingredients
+
+Only existing malts in the inventory have a guaranteed reality, ie they are available on the market at the time of purchase.
+
+The ingredients recorded in public base are there only to facilitate the seizure. They can not have a guaranteed reality, the product that may have evolved or simply disappeared when a user decides to buy it.
+
+This is why recipes and brews, once registered, do not refer to data base ingredients. They retain the values ​​of the moment for themselves.
+
+A recipe simply saves the quantities and characteristics of the ingredients at the time it is created. A recipe is not directly usable for a brassin because it may be very old and that the characteristics of the ingredients have changed or that these ingredients no longer exist at the time of brewing. In this sense, it does not refer directly to the public database or to the user inventory.
+Additions in the inventory
+
+When a user wants to enter an ingredient in his inventory, he begins by looking for him in the public base.
+
+In the transfer dialogue towards its inventory, two possibilities arise:
+
+    the ingredient has been correctly seized in public base
+    Either this is not the case.
+
+-
+
+In the second case, the user can change the public base by putting the ingredient up-to-date, either simply editing the ingredient in his inventory to make him in accordance with the reality of his purchase. In all cases, the product in its inventory can only be changed by it.
+A brassin is the implementation of a recipe. A brack must refer to actual ingredients at the time of brewing. These ingredients must be in the user inventory at the time of brewing. When using a recipe, only denominations and the stored features are presented to the user. For each of the ingredients present, it must establish a correspondence with a product in inventory, which can lightly change the characteristics so the results of the recipe. The recipe can then be modified from the Brass Data. For each ingredient, there is a table common to all users to contain the ingredients they have in inventory. For example, an Inventory_Fermentable table for fermentables. In addition to the fermentable data as found in the shared base of fermentables, the User_ID is added, the quantity in stock and the unit price. Each purchase of the user creates a record in this table, even if it is the same product.
+Creation, import and export of ingredients
+To add an ingredient to its inventory the user to choose between creating it directly or importing a copy of the shared database. In the creation dialog, it has two backup possibilities: either in its inventory only or in the shared database or in both at a time. When it decides to save it in the shared database, it is warned to respect strict instructions and to invite to abstain if it does not understand what it must do. If it decides to import it from the shared database, it must complete additional fields (quantity and price). It may also decide to update the shared database ingredient if there is a divergence of with the manufacturer's specification. It must check a box before saving. It must be understood that this is not likely to disrupt other users as to what they have already in inventory and recipes and Brassin.
+    <script src="" async defer></script>
+  </body>
+</html>
+  
+
