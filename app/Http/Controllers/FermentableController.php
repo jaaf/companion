@@ -18,10 +18,10 @@ class FermentableController extends Controller
      */
     public function index(Request $request)
     {
-        $fermentables=Fermentable::all();
-       // $fermentables =Fermentable::get()->sortBy(function ($query){
-       //     return[ $query->fermentable_brand->code,$query->fermentable_brand->name];
-       // })->all();
+        //$fermentables=Fermentable::all();
+        $fermentables =Fermentable::get()->sortBy(function ($query){
+            return[ $query->fermentable_brand->code,$query->fermentable_brand->name];
+       })->all();
         return FermentableResource::collection($fermentables);
     }
 
