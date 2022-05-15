@@ -26,6 +26,7 @@ return new class extends Migration
             $table->string('gravity')->default('');
             $table->string('color')->default('');
             $table->string('potential')->default('');
+            $table->string('diastatic_power')->default('');
             $table->string('currency')->default('');
             $table->timestamps();
         });

@@ -55,16 +55,16 @@ class AuthController extends Controller
             ]
         ]);
 
-        $user=User::create([
+        $user = User::create([
             'name' => $request['name'],
             'email' => $request['email'],
             'password' => bcrypt($request['password'])
         ]);
-        return response (['user'=>$user]);
+        return response(['user' => $user]);
     }
 
     /*LOGIN*/
- 
+
 
     public function login(Request $request)
     {
@@ -78,18 +78,17 @@ class AuthController extends Controller
             return response([
                 'error' => 'The Provided credentials are not correct'
             ], 422);
-         
         }
-return response()->json(Auth::user(), 200);
+        return response()->json(Auth::user(), 200);
 
-         
-       // throw ValidationException::withMessages([
-          //  'email' => ['The provided credentials are incorrect.']
-       // ]);
+
+        // throw ValidationException::withMessages([
+        //  'email' => ['The provided credentials are incorrect.']
+        // ]);
     }
 
     /*LOGOUT*/
- 
+
     public function logout()
     {
         Auth::logout();

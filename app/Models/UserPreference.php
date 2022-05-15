@@ -25,6 +25,7 @@ class UserPreference extends Model
         'gravity',
         'color',
         'potential',
+        'diastatic_power',
         'currency'
 
     ];

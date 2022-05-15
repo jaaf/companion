@@ -44,6 +44,7 @@ class StoreUserPreferenceRequest extends FormRequest
              'gravity'=>'string|nullable',
              'color'=>'string|nullable',
              'potential'=>'string|nullable',
+             'diastatic_power'=>'string|nullable',
              'currency'=>'string|nullable'
 
         ];

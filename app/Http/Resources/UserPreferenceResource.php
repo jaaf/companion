@@ -28,6 +28,7 @@ class UserPreferenceResource extends JsonResource
             'gravity'=>$this->gravity,
             'color'=>$this->color,
             'potential'=>$this->potential,
+            'diastatic_power'=>$this->diastatic_power,
             'currency'=>$this->currency,
             'created_at' => (new \DateTime($this->created_at))->format('Y-m-d H:i:s'),
             'updated_at' => (new \DateTime($this->updated_at))->format('Y-m-d H:i:s')
