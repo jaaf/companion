@@ -91,7 +91,7 @@ class AuthController extends Controller
 
     public function logout()
     {
-        Auth::logout();
+        Auth::guard('web')->logout();
     }
     public function requestPassword(Request $request)
     {

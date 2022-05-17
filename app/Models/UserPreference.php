@@ -9,12 +9,18 @@ class UserPreference extends Model
 {
     use HasFactory;
       protected $casts = [
+        'codes_hop'=>'array',
+        'forms_hop'=>'array',
+        'usages_hop'=>'array',
         'brands_fermentable' => 'array',
         'raw_ingredients_fermentable'=>'array',
         'types_fermentable'=>'array'
     ];
     protected $fillable=[
         'user_id',
+        'codes_hop',
+        'forms_hop',
+        'usages_hop',
         'brands_fermentable',
         'types_fermentable',
         'raw_ingredients_fermentable',

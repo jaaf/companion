@@ -22,7 +22,7 @@ class UserPreferenceController extends Controller
             return response()->json(['data'=>$userPreference]);
         }
         //it is the first time and there is not yet user preferences
-     return [];
+     return response()->json(['data'=>null]);
         
          
     }

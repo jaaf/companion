@@ -16,6 +16,9 @@ return new class extends Migration
         Schema::create('user_preferences', function (Blueprint $table) {
             $table->id();
             $table->foreignIdFor(\App\Models\User::class,'user_id');
+            $table->json('codes_hop')->default('[]');
+            $table->json('forms_hop')->default('[]');
+            $table->json('usages_hop')->default('[]');
             $table->json('brands_fermentable')->default('[]');
             $table->json('types_fermentable')->default('[]');
             $table->json('raw_ingredients_fermentable')->default('[]');

@@ -4,15 +4,18 @@ use Illuminate\Http\Request;
 use App\Models\UserPreferences;
 use Illuminate\Support\Facades\Redis;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HopController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\MailController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\TokenController;
 use App\Http\Controllers\SurveyController;
+use App\Http\Controllers\HopBothController;
 use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\LangCookieController;
 use App\Http\Controllers\FermentableController;
+use App\Http\Controllers\InventoryHopController;
 use App\Http\Controllers\UserPreferenceController;
 use App\Http\Controllers\FermentableBothController;
 use App\Http\Controllers\FermentableBrandController;
@@ -40,13 +43,17 @@ Route::middleware('auth:sanctum')->group(function () {
     });
 
 
-    Route::delete('/logout', [AuthController::class, 'logout']);
+    Route::post('/logout', [AuthController::class, 'logout']);
     Route::post('/fermentableBoth',[FermentableBothController::class,'store']);
     Route::put('/fermentableBoth/{fermentable}',[FermentableBothController::class,'update']);
     Route::resource('inventoryFermentable', InventoryFermentableController::class);
     Route::resource('fermentable', FermentableController::class);
     Route::resource('fermentableBrand', FermentableBrandController::class);
     Route::resource('userPreference',UserPreferenceController::class);
+    Route::post('/hopBoth',[HopBothController::class,'store']);
+    Route::put('/hopBoth/{hop}',[HopBothController::class,'update']);
+    Route::resource('hop',HopController::class);
+    Route::resource('inventoryHop',InventoryHopController::class);
 });
 
 
