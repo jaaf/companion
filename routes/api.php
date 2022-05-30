@@ -10,9 +10,11 @@ use App\Http\Controllers\MailController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\TokenController;
+use App\Http\Controllers\RecipeController;
 use App\Http\Controllers\SurveyController;
 use App\Http\Controllers\HopBothController;
 use App\Http\Controllers\LanguageController;
+use App\Http\Controllers\EquipmentController;
 use App\Http\Controllers\LangCookieController;
 use App\Http\Controllers\FermentableController;
 use App\Http\Controllers\InventoryHopController;
@@ -53,7 +55,9 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('/hopBoth',[HopBothController::class,'store']);
     Route::put('/hopBoth/{hop}',[HopBothController::class,'update']);
     Route::resource('hop',HopController::class);
-    Route::resource('inventoryHop',InventoryHopController::class);
+    Route::resource('inventoryHop',InventoryHopController::class); 
+     Route::resource('equipment',EquipmentController::class);
+     Route::resource('recipe',RecipeController::class);
 });
 
 
