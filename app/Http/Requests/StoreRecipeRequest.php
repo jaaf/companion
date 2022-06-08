@@ -5,12 +5,12 @@ namespace App\Http\Requests;
 use Illuminate\Foundation\Http\FormRequest;
 
 class StoreRecipeRequest extends FormRequest
-{ 
+{
     protected function prepareForValidation()
     {
-        $user=auth('sanctum')->user();
-         $this->merge([
-            'user_id' => $user->id// $this->user()->id
+        $user = auth('sanctum')->user();
+        $this->merge([
+            'user_id' => $user->id // $this->user()->id
         ]);
     }
 
@@ -32,10 +32,17 @@ class StoreRecipeRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'=>'required|string',
-            'author'=>'string|nullable',
-            'fermentables'=>'array|nullable',
-            'hops'=>'array|nullable'
+            'name' => 'required|string',
+            'author' => 'string|nullable',
+            'type' => 'required|string',
+            'batch_volume' => 'required|numeric',
+            'boil_time' => 'required|numeric',
+            'equipment' => 'required|integer',
+            'mash_efficiency' => 'required|numeric',
+            'original_gravity' => 'required|numeric',
+        'bitterness'=>'required|numeric',
+            'fermentables' => 'array|nullable',
+            'hops' => 'array|nullable'
         ];
     }
 }

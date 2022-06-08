@@ -19,6 +19,13 @@ class RecipeResource extends JsonResource
         'user_id'=>$this->user_id,
         'name'=>$this->name,
         'author'=>$this->author,
+        'type'=>$this->type,
+        'batch_volume'=>$this->batch_volume,
+        'boil_time'=>$this->boil_time,
+        'equipment'=>$this->equipment,
+        'mash_efficiency'=>$this->mash_efficiency,
+        'original_gravity'=>$this->original_gravity,
+        'bitterness'=>$this->bitterness,
         'fermentables'=>$this->fermentables,
         'hops'=>$this->hops,
 

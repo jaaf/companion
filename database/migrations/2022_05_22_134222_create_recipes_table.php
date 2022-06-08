@@ -18,6 +18,13 @@ return new class extends Migration
             $table->foreignIdFor(\App\Models\User::class, 'user_id');
             $table->string("name", 50);
             $table->string('author', 50);
+            $table->string('type',25);
+            $table->float('batch_volume');
+            $table->float('boil_time');
+            $table->integer('equipment');
+            $table->float('mash_efficiency');
+            $table->float('original_gravity');
+            $table->float('bitterness');
             $table->json('fermentables')->default('[]');
             $table->json('hops')->default('[]');
             $table->timestamps();

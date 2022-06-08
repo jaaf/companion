@@ -25,6 +25,13 @@ class UpdateRecipeRequest extends FormRequest
     {return [
             'name'=>'required|string',
             'author'=>'required|string',
+            'type'=>'required|string',
+        'batch_volume'=>'required|numeric',
+        'boil_time'=>'required|numeric',
+        'equipment'=>'required|integer',
+        'mash_efficiency'=>'required|numeric',
+        'original_gravity'=>'required|numeric',
+        'bitterness'=>'required|numeric',
             'fermentables'=>'array|nullable',
             'hops'=>'array|nullable'
         ];

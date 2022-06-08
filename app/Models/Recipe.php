@@ -17,6 +17,13 @@ class Recipe extends Model
         'user_id',
         'name',
         'author',
+        'type',
+        'batch_volume',
+        'boil_time',
+        'equipment',
+        'mash_efficiency',
+        'original_gravity',
+        'bitterness',
         'fermentables',
         'hops'
 
