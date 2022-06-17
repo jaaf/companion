@@ -88,24 +88,31 @@ class HopBothController extends Controller
         //get the previous hop
         $hop = Hop::find($data['shared_h_id']);
 
-        if ($hop->name != $data['name']) $log['name'] = $data['name'];
+        if ($hop->name != $data['name']) $log['name'] = $data['name']; 
+         if ($hop->supplier != $data['supplier']) $log['supplier'] = $data['supplier'];
         if ($hop->code  != $data['code'])$log['code'] = $data['code'];
-        if ($hop->usage != $data['usage']) $log['usage'] = $data['usage'];
+        if ($hop->purpose != $data['purpose']) $log['purpose'] = $data['purpose'];
         
         if ($hop->alpha != $data['alpha']) $log['alpha'] = $data['alpha'];
         if ($hop->harvest != $data['harvest']) $log['harvest'] = $data['harvest'];
+        if ($hop->aromas != $data['aromas']) $log['aromas'] = $data['aromas'];
+        if ($hop->alternatives != $data['alternatives']) $log['alternatives'] = $data['alternatives'];
+        if ($hop->notes != $data['notes']) $log['notes'] = $data['notes'];
         return $log;
     }
 
     private function initialLog($data)
     {
         $log = [];
-        $log['name'] = $data['name'];
+        $log['name'] = $data['name'];  $log['supplier'] = $data['supplier'];
         $log['code'] = $data['code'];
         $log['form'] = $data['form'];
-        $log['usage'] = $data['usage'];
+        $log['purpose'] = $data['purpose'];
         $log['alpha'] = $data['alpha'];
-        $log['harvest'] = $data['harvest'];
+        $log['harvest'] = $data['harvest']; 
+        $log['aromas'] = $data['aromas'];
+         $log['alternatives'] = $data['alternatives'];
+          $log['notes'] = $data['notes'];
         return $log;
     }
 }

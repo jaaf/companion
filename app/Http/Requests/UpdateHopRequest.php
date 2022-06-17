@@ -26,11 +26,15 @@ class UpdateHopRequest extends FormRequest
         return [
             "id"=>'required|integer',
             "name"=> 'required|string|max:50',
-            "code"=> 'required|string|max:10',
+            "supplier"=> 'required|string|max:50',
+            "code"=> 'required|string|max:10', 
             "form"=> 'required|string|max:25',
-            "usage"=>'required|string|max:25',
+            "purpose"=>'required|string|max:25',
             'alpha'=>'required|numeric|max:100|min:0',
-            "harvest"=>'required|integer|min:2022',
+            "harvest"=>'required|integer|min:2020',
+            "aromas"=>'string|nullable',
+            "alternatives"=>'string|nullable',
+            "notes"=>'string|nullable',
             'log'=>'string|nullable'
         ];
     }

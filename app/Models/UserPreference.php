@@ -11,7 +11,7 @@ class UserPreference extends Model
       protected $casts = [
         'codes_hop'=>'array',
         'forms_hop'=>'array',
-        'usages_hop'=>'array',
+        'purposes_hop'=>'array',
         'brands_fermentable' => 'array',
         'raw_ingredients_fermentable'=>'array',
         'types_fermentable'=>'array'
@@ -20,7 +20,7 @@ class UserPreference extends Model
         'user_id',
         'codes_hop',
         'forms_hop',
-        'usages_hop',
+        'purposes_hop',
         'brands_fermentable',
         'types_fermentable',
         'raw_ingredients_fermentable',

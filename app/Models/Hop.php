@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Hop extends Model
 {
     use HasFactory; 
-    protected $fillable =["name","code","form","usage","alpha","harvest","log"];
+    protected $fillable =["name","supplier","code","form","purpose","alpha","harvest","aromas","alternatives","notes","log"];
 }

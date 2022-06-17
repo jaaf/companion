@@ -26,7 +26,7 @@ class UpdateUserPreferenceRequest extends FormRequest
         return [
             'codes_hop'=>'array|nullable',
             'forms_hop'=>'array|nullable',
-            'usages_hop'=>'array|nullable',
+            'purposes_hop'=>'array|nullable',
            
             "brands_fermentable"=>'array|nullable',
             "types_fermentable"=>'array|nullable',

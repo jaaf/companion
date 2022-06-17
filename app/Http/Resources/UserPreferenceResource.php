@@ -19,7 +19,7 @@ class UserPreferenceResource extends JsonResource
             'user_id'=>$this->user_id,
             'codes_hop'=>$this->codes_hop,
             'forms_hop'=>$this->forms_hop,
-            'usages_hop'=>$this->usages_hop,
+            'purposes_hop'=>$this->purposes_hop,
 
             'brands_fermentable'=>$this->brands_fermentable, 
             'types_fermentable'=>$this->types_fermentable,

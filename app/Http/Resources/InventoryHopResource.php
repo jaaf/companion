@@ -22,11 +22,15 @@ class InventoryHopResource extends JsonResource
             "price"=>$this->price,
             "currency"=>$this->currency,
             "name"=> $this->name,
+            "supplier"=>$this->supplier,
             "code"=> $this->code,
             "form"=>$this->form,
-            "usage"=>$this->usage,
+            "purpose"=>$this->purpose,
             'alpha'=>$this->alpha,
             "harvest"=>$this->harvest,
+            "aromas"=>$this->aromas,
+            "alternatives"=>$this->alternatives,
+            "notes"=>$this->notes,
             'created_at' => (new \DateTime($this->created_at))->format('Y-m-d H:i:s'),
             'updated_at' => (new \DateTime($this->updated_at))->format('Y-m-d H:i:s')
         ];

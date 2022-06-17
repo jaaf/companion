@@ -21,11 +21,15 @@ return new class extends Migration
             $table->float('quantity');
             $table->string("currency");
             $table->string('name', 50);
+            $table->string('supplier',50);
             $table->string('code', 10); //the iso code of the country
             $table->string('form', 25); //pellet, cones, ...
-            $table->string('usage', 25);
+            $table->string('purpose',25);
             $table->float('alpha');
             $table->integer('harvest'); //the harvest year
+            $table->text('aromas')->nullable();
+            $table->text('alternatives')->nullable();
+            $table->text('notes')->nullable();
             $table->timestamps();
         });
     }
