@@ -30,7 +30,7 @@ return [
 
     'allowed_methods' => ['*'],
 
-    'allowed_origins' => ['denentzat.fr','*.denentzat.fr','http://localhost:3000'],
+    'allowed_origins' => ['https://js.denentzat.fr','*.denentzat.fr','http://localhost:3000'],
 
     'allowed_origins_patterns' => [],
 
