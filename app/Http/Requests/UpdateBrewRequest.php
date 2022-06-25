@@ -13,7 +13,7 @@ class UpdateBrewRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,20 @@ class UpdateBrewRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => 'required|string',
+            'author' => 'string|nullable',
+            'state'=>'required|string',
+            'fermentables_withdrawn'=>'required|boolean',
+            'hops_withdrawn'=>'required|boolean',
+            'type' => 'required|string',
+            'batch_volume' => 'required|numeric',
+            'boil_time' => 'required|numeric',
+            'equipment' => 'required|integer',
+            'mash_efficiency' => 'required|numeric',
+            'original_gravity' => 'required|numeric',
+        'bitterness'=>'required|numeric',
+            'fermentables' => 'array|nullable',
+            'hops' => 'array|nullable'
         ];
     }
 }

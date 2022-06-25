@@ -11,6 +11,7 @@ use App\Http\Controllers\BrandController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\TokenController;
 use App\Http\Controllers\RecipeController;
+use App\Http\Controllers\BrewController;
 use App\Http\Controllers\SurveyController;
 use App\Http\Controllers\HopBothController;
 use App\Http\Controllers\LanguageController;
@@ -58,6 +59,7 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::resource('inventoryHop',InventoryHopController::class); 
      Route::resource('equipment',EquipmentController::class);
      Route::resource('recipe',RecipeController::class);
+      Route::resource('brew',BrewController::class);
 });
 
 
