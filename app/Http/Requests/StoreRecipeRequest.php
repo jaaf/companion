@@ -35,14 +35,21 @@ class StoreRecipeRequest extends FormRequest
             'name' => 'required|string',
             'author' => 'string|nullable',
             'type' => 'required|string',
-            'batch_volume' => 'required|numeric',
-            'boil_time' => 'required|numeric',
+            'batch_volume' => 'required|numeric|min:5',
+            'boil_time' => 'required|numeric|min:45',
             'equipment' => 'required|integer',
-            'mash_efficiency' => 'required|numeric',
             'original_gravity' => 'required|numeric',
-        'bitterness'=>'required|numeric',
+            'bitterness'=>'required|numeric',
             'fermentables' => 'array|nullable',
-            'hops' => 'array|nullable'
+            'hops' => 'array|nullable',
+            'calculations'=>'json|nullable'
+        ];
+    }
+    public function messages(){
+        return [
+           
+            'boil_time.min'=>'the boil time must be at least 45 min.',
+            'batch_volume.min'=>'The batch volume must be at least 5 liters (around 1.33 gallon).'
         ];
     }
 }

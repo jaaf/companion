@@ -27,13 +27,13 @@ class UpdateRecipeRequest extends FormRequest
             'author'=>'required|string',
             'type'=>'required|string',
         'batch_volume'=>'required|numeric',
-        'boil_time'=>'required|numeric',
+        'boil_time'=>'required|numeric|min:30',
         'equipment'=>'required|integer',
-        'mash_efficiency'=>'required|numeric',
         'original_gravity'=>'required|numeric',
         'bitterness'=>'required|numeric',
             'fermentables'=>'array|nullable',
-            'hops'=>'array|nullable'
+            'hops'=>'array|nullable',
+            'calculations'=>'json|nullable'
         ];
     }
 }

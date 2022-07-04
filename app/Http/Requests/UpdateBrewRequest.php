@@ -27,17 +27,18 @@ class UpdateBrewRequest extends FormRequest
             'name' => 'required|string',
             'author' => 'string|nullable',
             'state'=>'required|string',
-            'fermentables_withdrawn'=>'required|boolean',
-            'hops_withdrawn'=>'required|boolean',
+            'fermentables_checked'=>'required|boolean',
+            'hops_checked'=>'required|boolean',
             'type' => 'required|string',
             'batch_volume' => 'required|numeric',
             'boil_time' => 'required|numeric',
-            'equipment' => 'required|integer',
-            'mash_efficiency' => 'required|numeric',
+            'equipment' => 'required|json',
             'original_gravity' => 'required|numeric',
         'bitterness'=>'required|numeric',
             'fermentables' => 'array|nullable',
-            'hops' => 'array|nullable'
+            'hops' => 'array|nullable',
+            'calculations'=>'json|nullable',
+            'achievements'=>'json|nullable'
         ];
     }
 }

@@ -23,11 +23,11 @@ class RecipeResource extends JsonResource
         'batch_volume'=>$this->batch_volume,
         'boil_time'=>$this->boil_time,
         'equipment'=>$this->equipment,
-        'mash_efficiency'=>$this->mash_efficiency,
         'original_gravity'=>$this->original_gravity,
         'bitterness'=>$this->bitterness,
         'fermentables'=>$this->fermentables,
         'hops'=>$this->hops,
+        'calculations'=>$this->calculations,
 
             'created_at' => (new \DateTime($this->created_at))->format('Y-m-d H:i:s'),
             'updated_at' => (new \DateTime($this->updated_at))->format('Y-m-d H:i:s')

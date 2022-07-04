@@ -21,11 +21,11 @@ class Recipe extends Model
         'batch_volume',
         'boil_time',
         'equipment',
-        'mash_efficiency',
         'original_gravity',
         'bitterness',
         'fermentables',
-        'hops'
+        'hops',
+        'calculations'
 
     ];
 }

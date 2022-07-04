@@ -22,11 +22,11 @@ return new class extends Migration
             $table->float('batch_volume');
             $table->float('boil_time');
             $table->integer('equipment');
-            $table->float('mash_efficiency');
             $table->float('original_gravity');
             $table->float('bitterness');
             $table->json('fermentables')->default('[]');
             $table->json('hops')->default('[]');
+            $table->json('calculations');
             $table->timestamps();
         });
     }

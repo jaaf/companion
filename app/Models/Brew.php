@@ -18,17 +18,18 @@ class Brew extends Model
         'name',
         'author',
         'state',
-        'fermentables_withdrawn',
-        'hops_withdrawn',
+        'fermentables_checked',
+        'hops_checked',
         'type',
         'batch_volume',
         'boil_time',
         'equipment',
-        'mash_efficiency',
         'original_gravity',
         'bitterness',
         'fermentables',
-        'hops'
+        'hops',
+        'calculations',
+        'achievements'
 
     ];
 }
