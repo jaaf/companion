@@ -11,6 +11,7 @@ class Recipe extends Model
     protected $casts = [
         'fermentables'=>'array',
         'hops'=>'array',
+        'yeasts'=>'array'
        
     ];
     protected $fillable=[
@@ -25,6 +26,7 @@ class Recipe extends Model
         'bitterness',
         'fermentables',
         'hops',
+        'yeasts',
         'calculations'
 
     ];

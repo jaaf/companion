@@ -11,6 +11,7 @@ class Brew extends Model
     protected $casts = [
         'fermentables'=>'array',
         'hops'=>'array',
+        'yeasts'=>'array'
        
     ];
     protected $fillable=[
@@ -19,6 +20,7 @@ class Brew extends Model
         'author',
         'state',
         'fermentables_checked',
+        'fermentables_withdrawn',
         'hops_checked',
         'type',
         'batch_volume',
@@ -28,6 +30,7 @@ class Brew extends Model
         'bitterness',
         'fermentables',
         'hops',
+        'yeasts',
         'calculations',
         'achievements'
 

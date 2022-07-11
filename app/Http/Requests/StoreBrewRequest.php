@@ -34,7 +34,7 @@ class StoreBrewRequest extends FormRequest
             'name' => 'required|string',
             'author' => 'string|nullable',
             'state'=>'required|string',
-            'fermentables_checked'=>'required|boolean',
+            'fermentables_checked'=>'required|boolean','fermentables_withdrawn'=>'required|boolean',
             'hops_checked'=>'required|boolean',
             'type' => 'required|string',
             'batch_volume' => 'required|numeric',
@@ -44,6 +44,7 @@ class StoreBrewRequest extends FormRequest
         'bitterness'=>'required|numeric',
             'fermentables' => 'array|nullable',
             'hops' => 'array|nullable',
+            'yeasts'=>'array|nullable',
             'calculations'=>'json|nullable',
             'achievements'=>'json|nullable'
         ];

@@ -26,6 +26,7 @@ return new class extends Migration
             $table->float('bitterness');
             $table->json('fermentables')->default('[]');
             $table->json('hops')->default('[]');
+            $table->json('yeasts')->default('[]');
             $table->json('calculations');
             $table->timestamps();
         });

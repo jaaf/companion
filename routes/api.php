@@ -23,7 +23,8 @@ use App\Http\Controllers\UserPreferenceController;
 use App\Http\Controllers\FermentableBothController;
 use App\Http\Controllers\FermentableBrandController;
 use App\Http\Controllers\InventoryFermentableController;
-
+use App\Http\Controllers\YeastController;
+use App\Http\Controllers\InventoryYeastController;
 //last tuto
 
 /*
@@ -50,13 +51,14 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('/fermentableBoth',[FermentableBothController::class,'store']);
     Route::put('/fermentableBoth/{fermentable}',[FermentableBothController::class,'update']);
     Route::resource('inventoryFermentable', InventoryFermentableController::class);
-    Route::resource('fermentable', FermentableController::class);
-    Route::resource('fermentableBrand', FermentableBrandController::class);
+    
+    
     Route::resource('userPreference',UserPreferenceController::class);
     Route::post('/hopBoth',[HopBothController::class,'store']);
     Route::put('/hopBoth/{hop}',[HopBothController::class,'update']);
-    Route::resource('hop',HopController::class);
-    Route::resource('inventoryHop',InventoryHopController::class); 
+   
+    Route::resource('inventoryHop',InventoryHopController::class);  Route::resource('yeast',YeastController::class);
+    Route::resource('inventoryYeast',InventoryYeastController::class); 
      Route::resource('equipment',EquipmentController::class);
      Route::resource('recipe',RecipeController::class);
       Route::resource('brew',BrewController::class);
@@ -70,8 +72,10 @@ Route::post('/login', [AuthController::class, 'login']);
 Route::post('/request-password', [AuthController::class, 'requestPassword']);
 Route::post('/resetpassword', [AuthController::class, 'resetPassword'])->name('resetpassword');
 Route::post('/requestpassword', [AuthController::class, 'requestPassword'])->name('requestpassword');
-
-
+Route::resource('fermentableBrand', FermentableBrandController::class);
+Route::resource('fermentable', FermentableController::class);
+ Route::resource('hop',HopController::class);
+ Route::resource('yeast',YeastController::class);
 Route::post('/setLanguage',[LangCookieController::class,'setCookie']);
 Route::get('/getLanguage',[LangCookieController::class,'getCookie']);
 

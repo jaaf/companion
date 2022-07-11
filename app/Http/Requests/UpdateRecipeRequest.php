@@ -33,6 +33,7 @@ class UpdateRecipeRequest extends FormRequest
         'bitterness'=>'required|numeric',
             'fermentables'=>'array|nullable',
             'hops'=>'array|nullable',
+            'yeasts'=>'array|nullable',
             'calculations'=>'json|nullable'
         ];
     }
