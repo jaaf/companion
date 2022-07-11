@@ -8,6 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class InventoryFermentable extends Model
 {
    protected $casts = [
+    'brand_id'=>'integer',
+    'shared_f_id'=>'integer',
+    'user_id'=>'integer',
         'quantity'=>'float',
         'price'=>'float',
         'potential'=>'float',
