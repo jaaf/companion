@@ -22,6 +22,7 @@ class InventoryFermentableResource extends JsonResource
             "quantity"=>$this->quantity,
             "currency"=>$this->currency,
             "price"=>$this->price,
+            'locked'=>$this->locked,
             "name" => $this->name,
             "brand_id" => $this->brand_id,
             "form" => $this->form,
