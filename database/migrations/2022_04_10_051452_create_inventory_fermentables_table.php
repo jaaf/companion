@@ -20,7 +20,7 @@ return new class extends Migration
             $table->float('price');
             $table->float('quantity');
             $table->string("currency");
-            $table->boolean("locked")->nullable();
+            $table->string("locked",25)->nullable();
             $table->string('name');
             $table->foreignIdFor(\App\Models\FermentableBrand::class, 'brand_id');
             $table->string('form');/*malt,grain,dry extract, liquid extract, sugar, other*/
