@@ -37,7 +37,7 @@ class StoreInventoryFermentableRequest extends FormRequest
             'quantity' => 'numeric|required',
             'currency' => 'required|string',
             'price' => 'required|numeric',
-            'locked'=>'string|nullable',
+            'locked'=>'array|nullable',
             'name' => 'required|string|max:50',
             'brand_id' => 'required|integer',
             'form' => 'required|string|max:50',
