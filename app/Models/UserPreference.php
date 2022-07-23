@@ -14,7 +14,11 @@ class UserPreference extends Model
         'purposes_hop'=>'array',
         'brands_fermentable' => 'array',
         'raw_ingredients_fermentable'=>'array',
-        'types_fermentable'=>'array'
+        'types_fermentable'=>'array',
+        'use_fermentable_inventory'=>'boolean',
+        'use_hop_inventory'=>'boolean',
+        'use_yeast_inventory'=>'boolean',
+        'use_misc_inventory'=>'boolean',
     ];
     protected $fillable=[
         'user_id',
@@ -32,7 +36,11 @@ class UserPreference extends Model
         'color',
         'potential',
         'diastatic_power',
-        'currency'
+        'currency',
+        'use_fermentable_inventory',
+        'use_hop_inventory',
+        'use_yeast_inventory',
+        'use_misc_inventory',
 
     ];
 }

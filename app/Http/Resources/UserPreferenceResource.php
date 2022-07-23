@@ -34,6 +34,10 @@ class UserPreferenceResource extends JsonResource
             'potential'=>$this->potential,
             'diastatic_power'=>$this->diastatic_power,
             'currency'=>$this->currency,
+            'use_fermentable_inventory'=>$this->use_fermentable_inventory,
+            'use_hop_inventory'=>$this->use_hop_inventory,
+            'use_yeast_inventory'=>$this->use_yeast_inventory,
+            'use_misc_inventory'=>$this->use_misc_inventory,
             'created_at' => (new \DateTime($this->created_at))->format('Y-m-d H:i:s'),
             'updated_at' => (new \DateTime($this->updated_at))->format('Y-m-d H:i:s')
         ];

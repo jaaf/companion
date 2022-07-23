@@ -34,6 +34,8 @@ class UpdateRecipeRequest extends FormRequest
             'fermentables'=>'array|nullable',
             'hops'=>'array|nullable',
             'yeasts'=>'array|nullable',
+            'miscs'=>'array|nullable',
+            'rests'=>'array|nullable',
             'calculations'=>'json|nullable'
         ];
     }

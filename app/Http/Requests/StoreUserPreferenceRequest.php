@@ -48,7 +48,11 @@ class StoreUserPreferenceRequest extends FormRequest
              'color'=>'string|nullable',
              'potential'=>'string|nullable',
              'diastatic_power'=>'string|nullable',
-             'currency'=>'string|nullable'
+             'currency'=>'string|nullable',
+             'use_fermentable_inventory'=>'boolean', 
+             'use_hop_inventory'=>'boolean',
+            'use_yeast_inventory'=>'boolean',
+            'use_misc_inventory'=>'boolean',
 
         ];
     }

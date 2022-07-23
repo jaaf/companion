@@ -30,6 +30,7 @@ class UpdateInventoryHopRequest extends FormRequest
             'quantity' => 'numeric|required',
             'currency' => 'required|string',
             'price' => 'required|numeric',
+            "locked"=>'array|nullable',
             "name"=> 'required|string|max:50',
               "supplier"=> 'required|string|max:50',
             "code"=> 'required|string|max:10',

@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreInventoryHopRequest extends FormRequest
+class UpdateInventoryMiscRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,23 +23,15 @@ class StoreInventoryHopRequest extends FormRequest
      */
     public function rules()
     {
-         return [
-             'shared_h_id' => 'nullable|integer',
+        return ["id"=>'required|integer',
+         'shared_m_id' => 'nullable|integer',
             'quantity' => 'numeric|required',
             'currency' => 'required|string',
             'price' => 'required|numeric',
             "locked"=>'array|nullable',
             "name"=> 'required|string|max:50',
-            "supplier"=> 'required|string|max:50',
-            "code"=> 'required|string|max:10',
-            "form"=> 'required|string|max:25',
-            "purpose"=>'required|string|max:25',
-            'alpha'=>'required|numeric|max:100|min:0',
-            "harvest"=>'required|integer|min:2020',
-            "aromas"=>'string|nullable',
-            "alternatives"=>'string|nullable',
-            "notes"=>'string|nullable',
-            'log'=>'string|nullable'
+            "category"=> 'required|string|max:25',
+            "unit"=> 'required|string|max:10'
         ];
     }
 }

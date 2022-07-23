@@ -20,9 +20,6 @@ class BrewResource extends JsonResource
         'name'=>$this->name,
         'author'=>$this->author,
         'state'=>$this->state,
-        'fermentables_checked'=>$this->fermentables_checked,
-        'fermentables_withdrawn'=>$this->fermentables_withdrawn,
-        'hops_checked'=>$this->hops_checked,
         'type'=>$this->type,
         'batch_volume'=>$this->batch_volume,
         'boil_time'=>$this->boil_time,
@@ -32,6 +29,8 @@ class BrewResource extends JsonResource
         'fermentables'=>$this->fermentables,
         'hops'=>$this->hops,
         'yeasts'=>$this->yeasts,
+        'miscs'=>$this->miscs,
+        'rests'=>$this->rests,
         'calculations'=>$this->calculations,
         'achievements'=>$this->achievements,
 

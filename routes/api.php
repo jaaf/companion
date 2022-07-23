@@ -6,12 +6,14 @@ use Illuminate\Support\Facades\Redis;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HopController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\BrewController;
 use App\Http\Controllers\MailController;
+use App\Http\Controllers\MiscController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\TokenController;
+use App\Http\Controllers\YeastController;
 use App\Http\Controllers\RecipeController;
-use App\Http\Controllers\BrewController;
 use App\Http\Controllers\SurveyController;
 use App\Http\Controllers\HopBothController;
 use App\Http\Controllers\LanguageController;
@@ -19,12 +21,12 @@ use App\Http\Controllers\EquipmentController;
 use App\Http\Controllers\LangCookieController;
 use App\Http\Controllers\FermentableController;
 use App\Http\Controllers\InventoryHopController;
+use App\Http\Controllers\InventoryMiscController;
+use App\Http\Controllers\InventoryYeastController;
 use App\Http\Controllers\UserPreferenceController;
 use App\Http\Controllers\FermentableBothController;
 use App\Http\Controllers\FermentableBrandController;
 use App\Http\Controllers\InventoryFermentableController;
-use App\Http\Controllers\YeastController;
-use App\Http\Controllers\InventoryYeastController;
 //last tuto
 
 /*
@@ -46,7 +48,7 @@ Route::middleware('auth:sanctum')->group(function () {
         return $request->user();
     });
 
-
+    Route::get('inventoryFermentable/clear',[InventoryFermentableController::class,'clear']);
     Route::post('/logout', [AuthController::class, 'logout']);
     Route::post('/fermentableBoth',[FermentableBothController::class,'store']);
     Route::put('/fermentableBoth/{fermentable}',[FermentableBothController::class,'update']);
@@ -57,11 +59,13 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('/hopBoth',[HopBothController::class,'store']);
     Route::put('/hopBoth/{hop}',[HopBothController::class,'update']);
    
-    Route::resource('inventoryHop',InventoryHopController::class);  Route::resource('yeast',YeastController::class);
+    Route::resource('inventoryHop',InventoryHopController::class);  
     Route::resource('inventoryYeast',InventoryYeastController::class); 
+    Route::resource('inventoryMisc',InventoryMiscController::class); 
      Route::resource('equipment',EquipmentController::class);
      Route::resource('recipe',RecipeController::class);
       Route::resource('brew',BrewController::class);
+     
 });
 
 
@@ -75,7 +79,8 @@ Route::post('/requestpassword', [AuthController::class, 'requestPassword'])->nam
 Route::resource('fermentableBrand', FermentableBrandController::class);
 Route::resource('fermentable', FermentableController::class);
  Route::resource('hop',HopController::class);
- Route::resource('yeast',YeastController::class);
+ Route::resource('yeast',YeastController::class); 
+ Route::resource('misc',MiscController::class);
 Route::post('/setLanguage',[LangCookieController::class,'setCookie']);
 Route::get('/getLanguage',[LangCookieController::class,'getCookie']);
 

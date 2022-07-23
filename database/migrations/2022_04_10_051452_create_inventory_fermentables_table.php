@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
 
 return new class extends Migration
 {
@@ -20,7 +20,7 @@ return new class extends Migration
             $table->float('price');
             $table->float('quantity');
             $table->string("currency");
-            $table->json("locked")->default('[]');;
+            $table->json("locked")->default('[]');
             $table->string('name');
             $table->foreignIdFor(\App\Models\FermentableBrand::class, 'brand_id');
             $table->string('form');/*malt,grain,dry extract, liquid extract, sugar, other*/

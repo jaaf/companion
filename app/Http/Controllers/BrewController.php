@@ -17,7 +17,7 @@ class BrewController extends Controller
      */
     public function index()
     {
-        $brews=Brew::where('user_id',Auth::user()->id)->get();
+        $brews=Brew::where('user_id',Auth::user()->id)->orderBy('id','DESC')->get();
         return BrewResource::collection($brews);
     }
 

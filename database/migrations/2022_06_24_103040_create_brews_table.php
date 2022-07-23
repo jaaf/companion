@@ -20,9 +20,6 @@ return new class extends Migration
 
             $table->string('author',50);
             $table->string('state', 25);
-            $table->boolean('fermentables_checked');
-            $table->boolean('fermentables_withdrawn');
-            $table->boolean('hops_checked');
             //recipe like
             $table->string('type', 25);
             $table->float('batch_volume');
@@ -33,6 +30,8 @@ return new class extends Migration
             $table->json('fermentables')->default('[]');
             $table->json('hops')->default('[]');
             $table->json('yeasts')->default('[]');
+            $table->json('miscs')->default('[]');
+            $table->json('rests')->default('[]');
             $table->json('calculations')->default('');
             $table->json('achievements')->default('');
             $table->timestamps();

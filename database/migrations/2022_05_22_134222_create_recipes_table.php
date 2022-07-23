@@ -27,6 +27,8 @@ return new class extends Migration
             $table->json('fermentables')->default('[]');
             $table->json('hops')->default('[]');
             $table->json('yeasts')->default('[]');
+            $table->json('miscs')->default('[]');
+            $table->json('rests')->default('[]');
             $table->json('calculations');
             $table->timestamps();
         });

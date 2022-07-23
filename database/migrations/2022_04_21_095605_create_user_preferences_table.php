@@ -31,6 +31,10 @@ return new class extends Migration
             $table->string('potential')->default('');
             $table->string('diastatic_power')->default('');
             $table->string('currency')->default('');
+            $table->boolean('use_fermentable_inventory')->default(true);
+            $table->boolean('use_hop_inventory')->default(true);
+            $table->boolean('use_yeast_inventory')->default(true);
+            $table->boolean('use_misc_inventory')->default(true);
             $table->timestamps();
         });
     }

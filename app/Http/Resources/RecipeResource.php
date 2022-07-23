@@ -28,6 +28,8 @@ class RecipeResource extends JsonResource
         'fermentables'=>$this->fermentables,
         'hops'=>$this->hops,
         'yeasts'=>$this->yeasts,
+        'miscs'=>$this->miscs,
+        'rests'=>$this->rests,
         'calculations'=>$this->calculations,
 
             'created_at' => (new \DateTime($this->created_at))->format('Y-m-d H:i:s'),

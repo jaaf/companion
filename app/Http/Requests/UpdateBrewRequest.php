@@ -27,9 +27,6 @@ class UpdateBrewRequest extends FormRequest
             'name' => 'required|string',
             'author' => 'string|nullable',
             'state'=>'required|string',
-            'fermentables_checked'=>'required|boolean',
-            'fermentables_withdrawn'=>'required|boolean',
-            'hops_checked'=>'required|boolean',
             'type' => 'required|string',
             'batch_volume' => 'required|numeric',
             'boil_time' => 'required|numeric',
@@ -39,6 +36,8 @@ class UpdateBrewRequest extends FormRequest
             'fermentables' => 'array|nullable',
             'hops' => 'array|nullable',
             'yeasts'=>'array|nullable',
+             'miscs'=>'array|nullable',
+             'rests'=>'array|nullable',
             'calculations'=>'json|nullable',
             'achievements'=>'json|nullable'
         ];

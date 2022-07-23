@@ -31,6 +31,7 @@ class UpdateInventoryYeastRequest extends FormRequest
             'currency' => 'required|string',
             'price' => 'required|numeric',
             'manufacturing_date' => 'date|nullable',
+            "locked"=>'array|nullable',
             "name" => 'required|string|max:50',
             "manufacturer" => 'required|string|max:50',
             "unit" => 'required|string',

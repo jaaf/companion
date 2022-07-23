@@ -4,7 +4,7 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class InventoryHopResource extends JsonResource
+class InventoryMiscResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -14,24 +14,17 @@ class InventoryHopResource extends JsonResource
      */
     public function toArray($request)
     {
-         return [
+        return [
             "id"=>$this->id,
-            "user_id"=>$this->user_id,
-            "shared_h_id"=>$this->shared_h_id,
+             "user_id"=>$this->user_id,
+            "shared_m_id"=>$this->shared_m_id,
             "quantity"=>$this->quantity,
             "price"=>$this->price,
             "currency"=>$this->currency,
             "locked"=>$this->locked,
             "name"=> $this->name,
-            "supplier"=>$this->supplier,
-            "code"=> $this->code,
-            "form"=>$this->form,
-            "purpose"=>$this->purpose,
-            'alpha'=>$this->alpha,
-            "harvest"=>$this->harvest,
-            "aromas"=>$this->aromas,
-            "alternatives"=>$this->alternatives,
-            "notes"=>$this->notes,
+            "category"=>$this->category,
+            "unit"=> $this->unit,
             'created_at' => (new \DateTime($this->created_at))->format('Y-m-d H:i:s'),
             'updated_at' => (new \DateTime($this->updated_at))->format('Y-m-d H:i:s')
         ];

@@ -75,4 +75,6 @@ class InventoryFermentableController extends Controller
         $inventoryFermentable->delete();
         return response(content: '', status: 204);
     }
+
+
 }

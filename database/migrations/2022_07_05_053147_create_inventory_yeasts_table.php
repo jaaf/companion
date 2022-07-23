@@ -21,6 +21,7 @@ return new class extends Migration
             $table->float('quantity');
             $table->string("currency");
             $table->date('manufacturing_date')->nullable();
+             $table->json("locked")->default('[]');
             $table->string('name', 50);
             $table->string('manufacturer',50);
             $table->string('unit',10);
