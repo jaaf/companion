@@ -27,6 +27,7 @@ class EquipmentResource extends JsonResource
             "mash_tun_undergrain_volume"=>$this->mash_tun_undergrain_volume,
             "mash_tun_retention"=>$this->mash_tun_retention,
             "mash_tun_thermal_losses"=>$this->mash_tun_thermal_losses,
+            "mash_tun_heat_capacity_equiv"=>$this->mash_tun_heat_capacity_equiv,
             "mash_thickness"=>$this->mash_thickness,
             "mash_efficiency"=>$this->mash_efficiency,
             "boiler_capacity"=>$this->boiler_capacity,

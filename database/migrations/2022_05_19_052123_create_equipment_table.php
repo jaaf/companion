@@ -26,7 +26,8 @@ return new class extends Migration
             $table->float('mash_tun_capacity')->nullable();//doesn't exist for all in one equipment – liters
             $table->float('mash_tun_undergrain_volume');
             $table->float('mash_tun_retention')->nullable();//doesn't exist for all in one equipment – liters
-            $table->float('mash_tun_thermal_losses')->nullable();//doesn't exist for all in one equipment — °C/hour
+            $table->float('mash_tun_thermal_losses');//doesn't exist for all in one equipment — °C/hour
+            $table->float('mash_tun_heat_capacity_equiv');//given in equivalent grain mass kg
             $table->float('mash_thickness');
             $table->float('mash_efficiency');
 

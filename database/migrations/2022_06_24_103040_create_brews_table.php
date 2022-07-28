@@ -25,6 +25,10 @@ return new class extends Migration
             $table->float('batch_volume');
             $table->float('boil_time');
             $table->json('equipment');
+            $table->string('temperature_transition',15)->nullable();
+            $table->float('decoction_fraction')->nullable();
+            $table->float('grain_temperature')->nullable();
+            $table->float('added_water_temperature')->nullable();
             $table->float('original_gravity');
             $table->float('bitterness');
             $table->json('fermentables')->default('[]');

@@ -31,6 +31,11 @@ class UpdateBrewRequest extends FormRequest
             'batch_volume' => 'required|numeric',
             'boil_time' => 'required|numeric',
             'equipment' => 'required|json',
+
+            'temperature_transition'=>'string|max:15|nullable',
+            'decoction_fraction'=>'numeric|max:0.5|min:0|nullable',
+            'grain_temperature'=>'numeric|min:0|max:50|nullable',
+            'added_water_temperature'=>'numeric|min:40|max:102|nullable',
             'original_gravity' => 'required|numeric',
         'bitterness'=>'required|numeric',
             'fermentables' => 'array|nullable',
