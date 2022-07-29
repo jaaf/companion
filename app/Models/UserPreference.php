@@ -19,6 +19,7 @@ class UserPreference extends Model
         'use_hop_inventory'=>'boolean',
         'use_yeast_inventory'=>'boolean',
         'use_misc_inventory'=>'boolean',
+        'save_in_cascade'=> 'boolean'
     ];
     protected $fillable=[
         'user_id',
@@ -41,6 +42,7 @@ class UserPreference extends Model
         'use_hop_inventory',
         'use_yeast_inventory',
         'use_misc_inventory',
+        'save_in_cascade'
 
     ];
 }

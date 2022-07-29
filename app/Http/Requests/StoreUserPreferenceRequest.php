@@ -53,6 +53,7 @@ class StoreUserPreferenceRequest extends FormRequest
              'use_hop_inventory'=>'boolean',
             'use_yeast_inventory'=>'boolean',
             'use_misc_inventory'=>'boolean',
+            'save_in_cascade'=>'boolean'
 
         ];
     }

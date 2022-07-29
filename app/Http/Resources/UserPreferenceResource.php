@@ -38,6 +38,7 @@ class UserPreferenceResource extends JsonResource
             'use_hop_inventory'=>$this->use_hop_inventory,
             'use_yeast_inventory'=>$this->use_yeast_inventory,
             'use_misc_inventory'=>$this->use_misc_inventory,
+            'save_in_cascade'=>$this->save_in_cascade,
             'created_at' => (new \DateTime($this->created_at))->format('Y-m-d H:i:s'),
             'updated_at' => (new \DateTime($this->updated_at))->format('Y-m-d H:i:s')
         ];

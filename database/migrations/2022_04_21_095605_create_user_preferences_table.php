@@ -35,6 +35,7 @@ return new class extends Migration
             $table->boolean('use_hop_inventory')->default(true);
             $table->boolean('use_yeast_inventory')->default(true);
             $table->boolean('use_misc_inventory')->default(true);
+            $table->boolean('save_in_cascade')->default(true);
             $table->timestamps();
         });
     }
